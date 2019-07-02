@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Css CDN-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Javascript-->
+    <script src="assets/javascript/game1.js"></script>
+    <title>Word-Guessing-game</title>
+</head>
+<body class="bg-secondary">
+    <!--Wraper-->
+    <div class="flex-wrap p-0 m-auto  bg-primary" style="max-width:980px;">
+    <!--Header-->    
+    <header class="flex-row bg-light boarder boarder-bottom border-lightdark">
+        <p class="font-weight-bold text-center">Hang-man</p>
+    </header>
+    <!--Main Content-->
+    <main class="flex-row bg-light">
+        <!--Letters display-->
+        <section class="d-flex p-1 justify-content-center">
+            <h1 class="m-1 p-1 bg-secondary text-nowwrap text-center" style="width:10rem;">_</h1>
+            <h1 class="m-1 p-1 bg-secondary text-nowwrap text-center" style="width:10rem;">_</h1>
+            <h1 class="m-1 p-1 bg-secondary text-nowwrap text-center"style="width:10rem;">_</h1>
+            <h1 class="m-1 p-1 bg-secondary text-nowwrap text-center"style="width:10rem;">_</h1>
+            <h1 class="m-1 p-1 bg-secondary text-nowwrap text-center"style="width:10rem;">_</h1>
+        </section>
+        <section class="flex-row ">
+            
+                <form class="d-flex justify-content-center">
+                        <fieldset>
+                        
+                        <!-- Form Name -->
+                        <legend>letter_guess</legend>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-6 control-label" for="textinput">Enter a letter</label>  
+                          <div class="col-md-12">
+                          <input id="textinput" name="textinput" type="text" placeholder="enter a letter" class="form-control input-md" required="">
+                          <span class="help-block">Hint</span>  
+                          </div>
+                        </div>
+                        
+                        <!-- Button -->
+                        <div class="form-group">
+                          
+                          <div class="col-md-12">
+                            <button id="guess_btn" name="guess_btn" class="btn btn-primary">Guess!</button>
+                          </div>
+                        </div>
+                        
+                        </fieldset>
+               </form>
+        </section>
+        
+    </main>
+    <!--Footer-->
+    <footer class="flex-row bg-dark "><p class="text-center text-light">&copy;2019 OB1</p></footer>
+</div>
+<!--Wraper ends-->
+</body>
+</html>
