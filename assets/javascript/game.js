@@ -71,8 +71,8 @@ function updateDisplay() {
   
   if(remainingGuesses <= 0) {
       //document.getElementById("gameover-image").style.cssText = "display: block";
-      document.getElementById("pressKeyTryAgain").style.cssText = "opacity 3.0s linear 0s";
-      //document.getElementById("pressKeyTryAgain").style.opacity ="opacity 3.0s linear 0s";
+      document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
+      document.getElementById("pressKeyTryAgain").style.opacity ="opacity 3.0s linear 0s";
       document.getElementById("pressKeyTryAgain").style.opacity = 1;
       hasFinished = true;
   }
