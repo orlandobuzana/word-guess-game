@@ -18,6 +18,7 @@ var selectableWords =           // Word list
 const maxTries = 10;            // Maximum number of tries player has plus asigning a const value
 // maxtries needs to remain 10
 var winSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3") //Audio from amazon 
+var loseSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
 var guessedLetters = [];        // Stores the letters the user guessed
 var currentWordIndex;           // Index of the current word in the array
 var guessingWord = [];          // This will be the word we actually build to match the current word
@@ -50,7 +51,7 @@ function resetGame() {
   document.getElementById("pressKeyTryAgain").style.cssText= "display: none";
   document.getElementById("pressKeyTryAgain").style.opacity ="opacity 1.0s linear 0s";
   document.getElementById("pressKeyTryAgain").style.opacity = 0;
-  //document.getElementById("gameover-image").style.cssText = "display: none";
+  document.getElementById("gameover-image").style.cssText = "display: none";
   document.getElementById("youwin-image").style.cssText = "display: none";
 
   // Show display
@@ -70,10 +71,12 @@ function updateDisplay() {
   document.getElementById("guessedLetters").style.cssText = "background: yellow";
   
   if(remainingGuesses <= 0) {
-      //document.getElementById("gameover-image").style.cssText = "display: block";
+      document.getElementById("gameover-image").style.cssText = "display: block";
+      document.getElementById("gameover-image").innerHTML = "You Lost! the word was "+ selectableWords[currentWordIndex];
       document.getElementById("pressKeyTryAgain").style.cssText = "display:block";
       document.getElementById("pressKeyTryAgain").style.opacity ="opacity 3.0s linear 0s";
       document.getElementById("pressKeyTryAgain").style.opacity = 1;
+      loseSound.play();
       hasFinished = true;
   }
 };
