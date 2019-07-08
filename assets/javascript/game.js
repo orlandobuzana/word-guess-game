@@ -1,4 +1,4 @@
-// props to @natewiley for advice on how and when to use const and !resetgame flags
+// props to @natewiley for advice on how and when to use const and !var flags tip of my hat to you sir
 //google fonts, amazon sounds 
 var selectableWords =           // Word list
     [
@@ -19,6 +19,8 @@ const maxTries = 10;            // Maximum number of tries player has plus asign
 // maxtries needs to remain 10
 var winSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3") //Audio from amazon 
 var loseSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
+var goodSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3");
+var badSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3");
 var guessedLetters = [];        // Stores the letters the user guessed
 var currentWordIndex;           // Index of the current word in the array
 var guessingWord = [];          // This will be the word we actually build to match the current word
@@ -103,12 +105,15 @@ function makeGuess(letter) {
   if (remainingGuesses > 0) {
       if (!gameStarted) {
           gameStarted = true;
+          document.getElementById("pressKeyTryAgain").style.css = "display:none;"
       }
 
       // Make sure we didn't use this letter yet
       if (guessedLetters.indexOf(letter) === -1) {
+          
           guessedLetters.push(letter);
           evaluateGuess(letter);
+          
       }
   }
   
@@ -124,12 +129,14 @@ function evaluateGuess(letter) {
   // Loop through word finding all instances of guessed letter, store the indicies in an array.
   for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
       if(selectableWords[currentWordIndex][i] === letter) {
+          goodSound.play();
           positions.push(i);
       }
   }
 
   // if there are no indicies, remove a guess and update the hangman image
   if (positions.length <= 0) {
+      badSound.play();
       remainingGuesses--;
       //updateHangmanImage();
   } else {

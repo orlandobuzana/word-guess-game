@@ -17,8 +17,8 @@
     <!--Wraper-->
     <div class="flex-wrap p-0 m-auto  bg-primary" style="max-width:980px;">
     <!--Header-->    
-    <header class="flex-row bg-light boarder boarder-bottom border-lightdark">
-        <p class="font-weight-bold display-4 text-center ">Hang-man</p>
+    <header class="flex-row bg-dark boarder boarder-bottom border-lightdark">
+        <p class="font-weight-bold display-3 text-center text-light  ">Hang-man</p>
     </header>
     <!--Main Content-->
     <main class="flex-row bg-light text-center">
@@ -30,7 +30,7 @@
             <!--<img id="gameover-image" src="" alt="Game Over Image" />-->
             <h3 id="gameover-image"></h3>
             </div>
-            <h2 class="bg-danger"id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
+            <h2 class="bg-info"id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
             <!--<img id="hangmanImage" src="" alt="" />-->
 
 
@@ -43,7 +43,7 @@
             <h4>Current Word</h4>
              <!--Letters display-->
             <h2 id="currentWord"></h2>
-            <h6>Hint: is a programming language</h6>
+            <h6>Hint: is a computer programing word</h6>
             <h4>Guesses Remaining</h4>
             <h6 id="remainingGuesses"></h6>
             <h4>Letters Guessed</h4>
@@ -55,7 +55,7 @@
     <footer class="flex-row bg-dark "><p class="text-center text-light">&copy;2019 OB1</p></footer>
 </div>
 <!--Wraper ends-->
-
+<!--Calling on the script to make sure is not mid-game and clean board. -->
 <script>
     resetGame();
     updateDisplay();
