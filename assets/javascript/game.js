@@ -138,7 +138,8 @@ function evaluateGuess(letter) {
 };
 function checkWin() {
   if(guessingWord.indexOf("_") === -1) {
-      //document.getElementById("youwin-image").style.cssText = "display: block";
+      document.getElementById("youwin-image").style.cssText = "display: block";
+      
       document.getElementById("pressKeyTryAgain").style.cssText= "display: block";
       winSound.play();
       wins++;
