@@ -1,5 +1,5 @@
-// props to @natewiley for advice on how and when to use const
-//
+// props to @natewiley for advice on how and when to use const and !resetgame flags
+//google fonts, amazon sounds 
 var selectableWords =           // Word list
     [
         "csharp",
@@ -17,7 +17,7 @@ var selectableWords =           // Word list
 
 const maxTries = 10;            // Maximum number of tries player has plus asigning a const value
 // maxtries needs to remain 10
-
+var winSound = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3") //Audio from amazon 
 var guessedLetters = [];        // Stores the letters the user guessed
 var currentWordIndex;           // Index of the current word in the array
 var guessingWord = [];          // This will be the word we actually build to match the current word
@@ -140,6 +140,7 @@ function checkWin() {
   if(guessingWord.indexOf("_") === -1) {
       //document.getElementById("youwin-image").style.cssText = "display: block";
       document.getElementById("pressKeyTryAgain").style.cssText= "display: block";
+      winSound.play();
       wins++;
       hasFinished = true;
   }
